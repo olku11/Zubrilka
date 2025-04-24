@@ -241,7 +241,7 @@ async def gori_8_start(update, context):
     ansver = []
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/8_gori.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/8_gori.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -257,7 +257,7 @@ async def ostr_8_start(update, context):
     ansver = []
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/8_ostr.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/8_ostr.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -273,7 +273,7 @@ async def prol_8_start(update, context):
     ansver = []
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/8_prol.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/8_prol.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -289,7 +289,7 @@ async def reki_8_start(update, context):
     ansver = []
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/8_reki.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/8_reki.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -305,7 +305,7 @@ async def sosedi_8_start(update, context):
     ansver = []
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/8_sosedi.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/8_sosedi.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -329,10 +329,11 @@ async def vse8_centre(update, context):
     await context.bot.delete_message(chat_id=update.message.chat.id, message_id=update.message.message_id)
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
-    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
-    if k == len(prav):
+    if k + 1 >= len(prav):
+        pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
         return 1
     else:
+        pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
         return 0
 
 
@@ -376,7 +377,7 @@ async def vozv_8_start(update, context):
     ansver = []
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/8_vozv.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/8_vozv.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -392,7 +393,7 @@ async def ug_8_start(update, context):
     ansver = []
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/8_kavkaz.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/8_kavkaz.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -408,7 +409,7 @@ async def eu_8_start(update, context):
     ansver = []
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/8_europe.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/8_europe.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -424,7 +425,7 @@ async def dv_8_start(update, context):
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/8_dv.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/8_dv.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -440,7 +441,7 @@ async def ural_8_start(update, context):
     ansver = []
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/8_ural.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/8_ural.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -456,7 +457,7 @@ async def zsibir_8_start(update, context):
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/8_zsib.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/8_zsib.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -472,7 +473,7 @@ async def vsibir_8_start(update, context):
     ansver = []
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/8_vsib.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/8_vsib.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -488,7 +489,7 @@ async def ostr_5_start(update, context):
     k = 0
     reply_keyboard = [['/stop']]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/5_ostr.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/5_ostr.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -504,7 +505,7 @@ async def gori_5_start(update, context):
     ansver = []
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/5_gori.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/5_gori.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -520,7 +521,7 @@ async def prol_5_start(update, context):
     ansver = []
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/5_prol.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/5_prol.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -536,7 +537,7 @@ async def reki_5_start(update, context):
     ansver = []
     msg = []
     k = 0
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/5_reki.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/5_reki.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -552,7 +553,7 @@ async def morya_5_start(update, context):
     k = 0
     reply_keyboard = [['/stop']]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
-    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("data/5_morya.jpg", 'rb'))
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("/data/5_morya.jpg", 'rb'))
     msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
@@ -616,22 +617,23 @@ async def weather(update, context):
         if '-reply_date' not in data:
             forecast += f"\nВы выполнили запрос погоды на сегодня"
         if '-temp' not in data:
-                forecast += f"\nТемпература: {res['forecasts'][0]['parts']['day_short']['temp']}°C"
+            forecast += f"\nТемпература: {res['forecasts'][0]['parts']['day_short']['temp']}°C"
         if '-feels_like' not in data:
-                    forecast += f"\nОщущается, как: {res['forecasts'][0]['parts']['day_short']['feels_like']}°C"
+            forecast += f"\nОщущается, как: {res['forecasts'][0]['parts']['day_short']['feels_like']}°C"
         if '-condition' not in data:
-                    forecast += f"\nОсадки: {conditions[res['forecasts'][0]['parts']['day_short']['condition']]}"
+            forecast += f"\nОсадки: {conditions[res['forecasts'][0]['parts']['day_short']['condition']]}"
         if '-wind_dir' not in data:
-                    forecast += f"\nНаправление ветра: {wind_dir[res['forecasts'][0]['parts']['day_short']['wind_dir']]}"
+            forecast += f"\nНаправление ветра: {wind_dir[res['forecasts'][0]['parts']['day_short']['wind_dir']]}"
         if '-wind_speed' not in data:
-                    forecast += f"\nСкорость ветра: {res['forecasts'][0]['parts']['day_short']['wind_speed']} м/с"
+            forecast += f"\nСкорость ветра: {res['forecasts'][0]['parts']['day_short']['wind_speed']} м/с"
         if "--extra" in data:
-                    forecast += f"\nСкорость порывов ветра: {res['forecasts'][0]['parts']['day_short']['wind_gust']} м/с\nДавление : {res['forecasts'][0]['parts']['day_short']['pressure_mm']}  мм рт. ст.\nВлажность воздуха: {res['forecasts'][0]['parts']['day_short']['humidity']} %"
+            forecast += f"\nСкорость порывов ветра: {res['forecasts'][0]['parts']['day_short']['wind_gust']} м/с\nДавление : {res['forecasts'][0]['parts']['day_short']['pressure_mm']}  мм рт. ст.\nВлажность воздуха: {res['forecasts'][0]['parts']['day_short']['humidity']} %"
         forecast = forecast.lstrip("\n")
         return forecast
+
     reply_keyboard = [['/menu']]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
-    await update.message.reply_text(yandex_weather(context.args),reply_markup=markup)
+    await update.message.reply_text(yandex_weather(context.args), reply_markup=markup)
 
 
 def main():
