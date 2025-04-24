@@ -46,14 +46,14 @@ otv_8_vozv = [["Восточно-Европейская равнина", "1"], [
               ["Среднесибирское плоскогорье", "3"], ["Кумо-Манычская впадина", "4"], ["Прикаспийская низменность", "5"],
               ["Северо-Сибирская низменность", "6"], ["Валдайская возвышенность", "7"],
               ["Среднерусская возвышенность", "8"], ["Приволжская возвышенность", "9"], ["Северные Увалы", "10"]]  # 10
-otv_8_dv =[["Море Лаптевых", "1"], ["Восточно-Сибирское море", "2"], ["Чукотское море", "3"], ["Берингово море", "5"],
-           ["Охотское море", "6"], ["Японское море", "7"], ["Пенжинская губа", "8"], ["залив Петра Велиого", "9"],
-           ["Татарский пролив", "10"], ["пролив Лаперуза", "11"], ["Кунаширский пролив", "12"],
-           ["п-ов. Камчатка", "13"], ["п-ов. Чукотка", "14"], ["о. Сахалин", "15"], ["Курильские о-ва", "16"],
-           ["Восточно-Сибирское море", "17"], ["о. Врангеля", "18"], ["горы Джугджур", "19"],
-           ["горы Сихотэ-Алинь", "20"], ["Чукотское нагорье", "21"], ["река Зея", "22"], ["оз. Ханко", "23"],
-           ["р. Уссури", "24"], ["р. Камчатка", "25"], ["влк. Ключевская сопка", "26"],
-           ["влк. Авачинская сопка", "27"], ["р. Анадырь", "28"], ["Зейское вдх.", "29"]]
+otv_8_dv = [["Море Лаптевых", "1"], ["Восточно-Сибирское море", "2"], ["Чукотское море", "3"], ["Берингово море", "5"],
+            ["Охотское море", "6"], ["Японское море", "7"], ["Пенжинская губа", "8"], ["залив Петра Велиого", "9"],
+            ["Татарский пролив", "10"], ["пролив Лаперуза", "11"], ["Кунаширский пролив", "12"],
+            ["п-ов. Камчатка", "13"], ["п-ов. Чукотка", "14"], ["о. Сахалин", "15"], ["Курильские о-ва", "16"],
+            ["Восточно-Сибирское море", "17"], ["о. Врангеля", "18"], ["горы Джугджур", "19"],
+            ["горы Сихотэ-Алинь", "20"], ["Чукотское нагорье", "21"], ["река Зея", "22"], ["оз. Ханко", "23"],
+            ["р. Уссури", "24"], ["р. Камчатка", "25"], ["влк. Ключевская сопка", "26"],
+            ["влк. Авачинская сопка", "27"], ["р. Анадырь", "28"], ["Зейское вдх.", "29"]]
 otv_8_europe = [["Балтийское море", "1"], ["Финский залив", "1а"], ["Белое море", "2"], ["Баренцево море", "3"],
                 ["Кандалакшкский залив", "4"], ["Онежская губа", "5"], ["Каспийское море", "6"],
                 ["оз. Имандра", "7"], ["Беломоро-Балтийский канал", "8"], ["р. Онега", "9"], ["р. Мезень", "11"],
@@ -116,24 +116,47 @@ otv_5_gori = [["Кордильеры", "1"], ["Аппалачи", "2"], ["Анд
               ["Северный Ледовитый океан", "19"], ["Скандинавские горы", "20"], ["Алтай", "21"],
               ["Горы Тянь-Шань", "22"], ["горы Памир", "23"], ["горы Гиндукуш", "24"], ["Тибет", "25"],
               ["горы Кунь-Лунь", "26"], ["влк. Орисаба", "27"], ["г. Арарат", "28"], ["влк. Кракатау", "29"]]
-otv_5_prol =[["Залив Аляска", "1"], ["Калифорнийский залив", "2"], ["Мексиканский залив", "3"], ["Гудзонов залив", "4"],
-             ["Ботнический залив", "5"], ["Обская губа", "6"], ["залив Шелихова", "7"], ["Анадырский залив", "8"],
-             ["Бискайский залив", "9"], ["Гвинейский залив", "10"], ["Аденский залив", "11"], ["Персидски залив", "12"],
-             ["Оманский залив", "13"], ["Бенгальский залив", "14"], ["Гудзовнов пролив", "15"],
-             ["Датский пролив", "17"], ["Ла-Манш", "18"], ["Гибралтарский пролив", "19"], ["Пролив Дарданеллы", "20"],
-             ["пролив Босфор", "21"], ["Суэцкий канал", "22"], ["Баб-эль-Мандебский пролив", "23"],
-             ["Мозамбикский пролив", "24"], ["Малаккский пролив", "25"], ["Зондский пролив", "26"],
-             ["Торресов пролив", "27"], ["Бассов пролив", "28"], ["Магелланов пролив", "29"], ["пролив Дрейка", "30"]]
-otv_5_morya = [["моря Бофорта", "1"], ["Карибское море", "2"], ["Саргассово море ", "3"]]
-
+otv_5_prol = [["Залив Аляска", "1"], ["Калифорнийский залив", "2"], ["Мексиканский залив", "3"],
+              ["Гудзонов залив", "4"],
+              ["Ботнический залив", "5"], ["Обская губа", "6"], ["залив Шелихова", "7"], ["Анадырский залив", "8"],
+              ["Бискайский залив", "9"], ["Гвинейский залив", "10"], ["Аденский залив", "11"],
+              ["Персидски залив", "12"],
+              ["Оманский залив", "13"], ["Бенгальский залив", "14"], ["Гудзовнов пролив", "15"],
+              ["Датский пролив", "17"], ["Ла-Манш", "18"], ["Гибралтарский пролив", "19"], ["Пролив Дарданеллы", "20"],
+              ["пролив Босфор", "21"], ["Суэцкий канал", "22"], ["Баб-эль-Мандебский пролив", "23"],
+              ["Мозамбикский пролив", "24"], ["Малаккский пролив", "25"], ["Зондский пролив", "26"],
+              ["Торресов пролив", "27"], ["Бассов пролив", "28"], ["Магелланов пролив", "29"], ["пролив Дрейка", "30"]]
+otv_5_morya = [["море Бофорта", "1"], ["Карибское море", "2"], ["Саргассово море", "3"], ["Гренладское море", "5"],
+               ["море Баффина ", "4"], ["Норвежское море ", "6"], ["Балтийское море", "7"], ["Баренцево море", "8"],
+               ["Белое море ", "9"], ["Карское море", "10"], ["море Лаптевых", "11"], ["Восточно-Сибирское море", "12"],
+               ["Чукотское море", "13"], ["Берингово море", "14"], ["Охотское море", "15"], ["Японское море", "16"],
+               ["море Амундсена", "17"], ["море Уэдделла", "18"], ["море Росса", "19"], ["Тасманово море", "20"],
+               ["Коралловое море", "21"], ["Средземное море", "22"], ["Чёрное море", "23"], ["Азовское море", "24"],
+               ["Красное море", "25"], ["Аравийское море", "26"], ["Южно-Китайское море", "27"],
+               ["Филиппинское море", "28"], ["Восточно-Китайское море", "29"]]
+otv_5_reki = [["Река Юкон", "30"], ["река Маккензи", "31"], ["Большое Медвежье озеро", "32"],
+              ["Большое Невольничье озеро", "33"], ["река Миссисипи", "34"], ["озеро Верхнее", "35"],
+              ["озеро Мичиган", "36"], ["озеро Гурон", "37"], ["озеро Эри", "38"], ["озеро Онтарио", "39"],
+              ["река Ориноко", "40"], ["река Амазонка", "41"], ["озеро Титикака", "42"], ["озеро Поопо", "43"],
+              ["река Парана", "44"], ["река Парагвай", "45"], ["река Дунай", "46"], ["река Днепр", "47"],
+              ["река Волга", "48"], ["Ладожское озеро", "49"], ["Онежское озеро", "50"], ["Каспийское море", "51"],
+              ["река Тигр", "52"], ["река Евфрат", "53"], ["Аральское море", "54"], ["озеро Балхащ", "55"],
+              ["река Амударья", "56"], ["река Сырдарья", "57"], ["река Обь", "58"], ["река Енисей", "59"],
+              ["озеро Байкал", "60"], ["река Лена", "61"], ["река Амур", "62"], ["река Хуанхэ", "63"],
+              ["река Янцзы", "64"], ["река Инд", "65"], ["река Ганг", "66"], ["река Брахмапутра", "67"],
+              ["река Нигер", "68"], ["озеро Чад", "69"], ["озеро Виктория", "71"], ["озеро Танганьика", "72"],
+              ["озеро Ньяса", "73"], ["река Нил", "70"], ["река Конго", "74"], ["река Замбези", "75"],
+              ["река Лимпопо", "76"], ["озеро Эйр", "77"], ["река Дарлинг", "78"], ["река Муррей", "79"],
+              ["озеро Восток", "80"]]
+pols = dict()
 ansver = []
 k = 0
 de = 0
-msg = 0
+msg = []
 
 
 async def start(update, context):
-    reply_keyboard = [['8 Класс', '7 класс', '5 класс']]
+    reply_keyboard = [['8 Класс', '5 класс']]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     await update.message.reply_text(f"Привет! Добро пожаловать в Зубрилку!\n"
                                     f"Номенклатуру какого класса ты хочешь повторить?", reply_markup=markup)
@@ -142,274 +165,168 @@ async def start(update, context):
 
 async def ans(update, context):
     if update.message.text.lower() == "8 класс":
-        reply_keyboard = [['/8_gori', '/8_ostrova'], ['/8_morya ', '/8_reki'], ['/8_sosedi', '/8_ravnini'], ['/menu']]
+        reply_keyboard = [['/8_gori', '/8_ostrova', '/8_morya'], ['/8_sosedi', '/8_reki', '/8_ravnini'],
+                          ['/8_ug', '/8_eu', "/8_dv"], ["/8_ural", '/8_vsibir', "/8_zsibir"], ['/menu']]
         markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
         await update.message.reply_text("Тесты для 8 класса:\n"
                                         "/8_gori - Горы и хребты России \n"
-                                        "/8_ostrova - Острова и полуострова \n"
-                                        "/8_morya - Моря, проливы и заливы \n"
-                                        "/8_reki - Реки и озёра \n"
-                                        "/8_sosedi - Соседи \n"
-                                        "/8_ravnini - Равнины, низменности и возвышенности", reply_markup=markup)
+                                        "/8_ostrova - Острова и полуострова России\n"
+                                        "/8_morya - Моря, проливы и заливы России\n"
+                                        "/8_reki - Реки и озёра России\n"
+                                        "/8_sosedi - Соседи России\n"
+                                        "/8_ravnini - Равнины, низменности и возвышенности России \n"
+                                        "/8_ug - Юг России \n"
+                                        "/8_eu - Европейская часть России \n"
+                                        "/8_dv- Дальний Восток \n"
+                                        "/8_ural - Урал \n"
+                                        "/8_zsbir- Западная Сибирь \n"
+                                        "/8_vsibir - Восточная Сибирь", reply_markup=markup)
         return ConversationHandler.END
-    elif update.message.text.lower() == "7 класс" or update.message.text.lower() == "5 класс":
-        reply_keyboard = []
+    elif update.message.text.lower() == "5 класс":
+        reply_keyboard = [['/5_ostr', '/5 gori', '/5_prol'], ['/5_morya', '/5_reki'], ['/menu']]
         markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
-        await update.message.reply_text("Пока не сделано", reply_markup=markup)
-        name = 0
+        await update.message.reply_text("Тесты для 5 класса:\n"
+                                        "/5_gori - Горы и хребты мира \n"
+                                        "/5_ostr - Острова и полуострова мира\n"
+                                        "/5_prol - Проливы и заливы мира\n"
+                                        "/5_reki - Реки и озёра мира\n"
+                                        "/5_morya - Моря мира \n", reply_markup=markup)
         return ConversationHandler.END
 
 
 async def stop_8(update, context):
-    reply_keyboard = [['/8_gori', '/8_ostrova'], ['/8_morya ', '/8_reki'], ['/8_sosedi', '/8_ravnini'], ['/menu']]
+    reply_keyboard = [['/8_gori', '/8_ostrova', '/8_morya'], ['/8_sosedi', '/8_reki', '/8_ravnini'],
+                      ['/8_ug', '/8_eu', "/8_dv"], ["/8_ural", '/8_vsibir', "/8_zsibir"], ['/menu']]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     await update.message.reply_text("Тест прерван", reply_markup=markup)
     await update.message.reply_text("Тесты для 8 класса:\n"
                                     "/8_gori - Горы и хребты России \n"
-                                    "/8_ostrova - Острова и полуострова \n"
-                                    "/8_morya - Моря, проливы и заливы \n"
-                                    "/8_reki - Реки и озёра \n"
-                                    "/8_sosedi - Соседи \n"
-                                    "/8_ravnini - Равнины, низменности и возвышенности", reply_markup=markup)
+                                    "/8_ostrova - Острова и полуострова России\n"
+                                    "/8_morya - Моря, проливы и заливы России\n"
+                                    "/8_reki - Реки и озёра России\n"
+                                    "/8_sosedi - Соседи России\n"
+                                    "/8_ravnini - Равнины, низменности и возвышенности России \n"
+                                    "/8_ug - Юг России \n"
+                                    "/8_eu - Европейская часть России \n"
+                                    "/8_dv- Дальний Восток \n"
+                                    "/8_ural - Урал \n"
+                                    "/8_zsbir- Западная Сибирь \n"
+                                    "/8_vsibir - Восточная Сибирь", reply_markup=markup)
     return ConversationHandler.END
 
 
 async def gori_8_start(update, context):
-    global otv_8_gori, ansver, k, msg
-    random.shuffle(otv_8_gori)
+    global otv_8_gori, pols
+    prav = otv_8_gori
+    random.shuffle(prav)
     ansver = []
+    msg = []
     k = 0
-    print(de)
     await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_gori.jpg", 'rb'))
-    msg = await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {otv_8_gori[k][0]}",
-                                          reply_markup=ReplyKeyboardRemove())
-
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
     return 0
-
-
-async def gori_8_centre(update, context):
-    global otv_8_gori, ansver, k, msg
-    ansver.append(update.message.text)
-    k += 1
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg.message_id)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=update.message.message_id)
-    msg = await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {otv_8_gori[k][0]}",
-                                          reply_markup=ReplyKeyboardRemove())
-    if k == 22:
-        return 1
-    else:
-        return 0
-
-
-async def gori_8_last(update, context):
-    global otv_8_gori, ansver, msg
-    ansver.append(update.message.text)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg.message_id)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=update.message.message_id)
-    st = ["НАЗВАНИЕ ВАШ_ОТВЕТ ПРАВИЛЬНЫЙ_ОТВЕТ \n"]
-    c = 0
-    for i in range(len(otv_8_gori)):
-        if otv_8_gori[i][1] == ansver[i]:
-            st.append(f"{otv_8_gori[i][0]}: {ansver[i]} {otv_8_gori[i][1]} ДА \n")
-            c += 1
-        else:
-            st.append(f"{otv_8_gori[i][0]}: {ansver[i]} {otv_8_gori[i][1]} НЕТ \n")
-    print(st)
-    await update.message.reply_text(" ".join(st), reply_markup=ReplyKeyboardRemove())
-    await update.message.reply_text(
-        f"Количесвто правильных ответов: {c}/{len(ansver)} {math.floor(c / len(ansver) * 100)}%",
-        reply_markup=ReplyKeyboardRemove())
-
-    return ConversationHandler.END
 
 
 async def ostr_8_start(update, context):
-    global otv_8_ostr, ansver, k, msg
-    random.shuffle(otv_8_ostr)
+    global otv_8_ostr, pols
+    prav = otv_8_ostr
+    random.shuffle(prav)
     ansver = []
+    msg = []
     k = 0
-    print(de)
     await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_ostr.jpg", 'rb'))
-    msg = await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {otv_8_ostr[k][0]}",
-                                          reply_markup=ReplyKeyboardRemove())
-
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
     return 0
-
-
-async def ostr_8_centre(update, context):
-    global otv_8_ostr, ansver, k, msg
-    ansver.append(update.message.text)
-    k += 1
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg.message_id)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=update.message.message_id)
-    msg = await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {otv_8_ostr[k][0]}",
-                                          reply_markup=ReplyKeyboardRemove())
-    if k == 19:
-        return 1
-    else:
-        return 0
-
-
-async def ostr_8_last(update, context):
-    global otv_8_ostr, ansver, msg
-    ansver.append(update.message.text)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg.message_id)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=update.message.message_id)
-    st = ["НАЗВАНИЕ ВАШ_ОТВЕТ ПРАВИЛЬНЫЙ_ОТВЕТ ДА/НЕТ\n"]
-    c = 0
-    for i in range(len(otv_8_ostr)):
-        if otv_8_ostr[i][1] == ansver[i]:
-            st.append(f"{otv_8_ostr[i][0]}: {ansver[i]} {otv_8_ostr[i][1]} ДА \n")
-            c += 1
-        else:
-            st.append(f"{otv_8_ostr[i][0]}: {ansver[i]} {otv_8_ostr[i][1]} НЕТ \n")
-    print(st)
-    await update.message.reply_text(" ".join(st), reply_markup=ReplyKeyboardRemove())
-    await update.message.reply_text(
-        f"Количесвто правильных ответов: {c}/{len(ansver)} {math.floor(c / len(ansver) * 100)}%",
-        reply_markup=ReplyKeyboardRemove())
-
-    return ConversationHandler.END
 
 
 async def prol_8_start(update, context):
-    global otv_8_morya, ansver, k, msg
-    random.shuffle(otv_8_morya)
+    global otv_8_morya, pols
+    prav = otv_8_morya
+    random.shuffle(prav)
     ansver = []
+    msg = []
     k = 0
-    print(de)
     await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_prol.jpg", 'rb'))
-    msg = await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {otv_8_morya[k][0]}",
-                                          reply_markup=ReplyKeyboardRemove())
-
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
     return 0
-
-
-async def prol_8_centre(update, context):
-    global otv_8_morya, ansver, k, msg
-    ansver.append(update.message.text)
-    k += 1
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg.message_id)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=update.message.message_id)
-    msg = await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {otv_8_morya[k][0]}",
-                                          reply_markup=ReplyKeyboardRemove())
-    if k == 24:
-        return 1
-    else:
-        return 0
-
-
-async def prol_8_last(update, context):
-    global otv_8_morya, ansver, msg
-    ansver.append(update.message.text)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg.message_id)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=update.message.message_id)
-    st = ["НАЗВАНИЕ ВАШ_ОТВЕТ ПРАВИЛЬНЫЙ_ОТВЕТ ДА/НЕТ\n"]
-    c = 0
-    for i in range(len(otv_8_morya)):
-        if otv_8_morya[i][1] == ansver[i]:
-            st.append(f"{otv_8_morya[i][0]}: {ansver[i]} {otv_8_morya[i][1]} ДА \n")
-            c += 1
-        else:
-            st.append(f"{otv_8_morya[i][0]}: {ansver[i]} {otv_8_morya[i][1]} НЕТ \n")
-    print(st)
-    await update.message.reply_text(" ".join(st), reply_markup=ReplyKeyboardRemove())
-    await update.message.reply_text(
-        f"Количесвто правильных ответов: {c}/{len(ansver)} {math.floor(c / len(ansver) * 100)}%",
-        reply_markup=ReplyKeyboardRemove())
-
-    return ConversationHandler.END
 
 
 async def reki_8_start(update, context):
-    global otv_8_reki, ansver, k, msg
-    random.shuffle(otv_8_reki)
+    global otv_8_reki, pols
+    prav = otv_8_reki
+    random.shuffle(prav)
     ansver = []
+    msg = []
     k = 0
-    print(de)
     await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_reki.jpg", 'rb'))
-    msg = await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {otv_8_reki[k][0]}",
-                                          reply_markup=ReplyKeyboardRemove())
-
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
     return 0
-
-
-async def reki_8_centre(update, context):
-    global otv_8_reki, ansver, k, msg
-    ansver.append(update.message.text)
-    k += 1
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg.message_id)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=update.message.message_id)
-    msg = await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {otv_8_reki[k][0]}",
-                                          reply_markup=ReplyKeyboardRemove())
-    if k == 16:
-        return 1
-    else:
-        return 0
-
-
-async def reki_8_last(update, context):
-    global otv_8_reki, ansver, msg
-    ansver.append(update.message.text)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg.message_id)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=update.message.message_id)
-    st = ["НАЗВАНИЕ ВАШ_ОТВЕТ ПРАВИЛЬНЫЙ_ОТВЕТ ДА/НЕТ\n"]
-    c = 0
-    for i in range(len(otv_8_reki)):
-        if otv_8_reki[i][1] == ansver[i]:
-            st.append(f"{otv_8_reki[i][0]}: {ansver[i]} {otv_8_reki[i][1]} ДА \n")
-            c += 1
-        else:
-            st.append(f"{otv_8_reki[i][0]}: {ansver[i]} {otv_8_reki[i][1]} НЕТ \n")
-    print(st)
-    await update.message.reply_text(" ".join(st), reply_markup=ReplyKeyboardRemove())
-    await update.message.reply_text(
-        f"Количесвто правильных ответов: {c}/{len(ansver)} {math.floor(c / len(ansver) * 100)}%",
-        reply_markup=ReplyKeyboardRemove())
-
-    return ConversationHandler.END
 
 
 async def sosedi_8_start(update, context):
-    global otv_8_sosedi, ansver, k, msg
-    random.shuffle(otv_8_sosedi)
+    global otv_8_sosedi, pols
+    prav = otv_8_sosedi
+    random.shuffle(prav)
     ansver = []
+    msg = []
     k = 0
-    print(de)
     await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_sosedi.jpg", 'rb'))
-    msg = await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {otv_8_sosedi[k][0]}",
-                                          reply_markup=ReplyKeyboardRemove())
-
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
     return 0
 
 
-async def sosedi_8_centre(update, context):
-    global otv_8_sosedi, ansver, k, msg
-    ansver.append(update.message.text)
+async def vse8_centre(update, context):
+    global pols
+    al = pols[f'{update.message.chat.id}']
+    prav = al[0]
+    ansver = al[3]
+    msg = al[2]
+    k = al[1]
     k += 1
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg.message_id)
+    ansver.append(update.message.text)
+    while len(msg) > 0:
+        await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg[-1].message_id)
+        msg.pop()
     await context.bot.delete_message(chat_id=update.message.chat.id, message_id=update.message.message_id)
-    msg = await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {otv_8_sosedi[k][0]}",
-                                          reply_markup=ReplyKeyboardRemove())
-    if k == 17:
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
+    if k == len(prav):
         return 1
     else:
         return 0
 
 
-async def sosedi_8_last(update, context):
-    global otv_8_sosedi, ansver, msg
+async def vse8_last(update, context):
+    global pols
+    al = pols[f'{update.message.chat.id}']
+    prav = al[0]
+    ansver = al[3]
+    msg = al[2]
+    k = al[1]
     ansver.append(update.message.text)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg.message_id)
+    while len(msg) > 0:
+        await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg[-1].message_id)
+        msg.pop()
     await context.bot.delete_message(chat_id=update.message.chat.id, message_id=update.message.message_id)
     st = ["НАЗВАНИЕ ВАШ_ОТВЕТ ПРАВИЛЬНЫЙ_ОТВЕТ ДА/НЕТ\n"]
     c = 0
-    for i in range(len(otv_8_sosedi)):
-        if otv_8_sosedi[i][1] == ansver[i]:
-            st.append(f"{otv_8_sosedi[i][0]}: {ansver[i]} {otv_8_sosedi[i][1]} ДА \n")
+    for i in range(len(prav)):
+        if prav[i][1] == ansver[i]:
+            st.append(f"{prav[i][0]}: {ansver[i]} {prav[i][1]} ДА \n")
             c += 1
         else:
-            st.append(f"{otv_8_reki[i][0]}: {ansver[i]} {otv_8_reki[i][1]} НЕТ \n")
+            st.append(f"{prav[i][0]}: {ansver[i]} {prav[i][1]} НЕТ \n")
     print(st)
     await update.message.reply_text(" ".join(st), reply_markup=ReplyKeyboardRemove())
     await update.message.reply_text(
@@ -420,52 +337,101 @@ async def sosedi_8_last(update, context):
 
 
 async def vozv_8_start(update, context):
-    global otv_8_vozv, ansver, k, msg
-    random.shuffle(otv_8_vozv)
+    global otv_8_vozv, pols
+    prav = otv_8_vozv
+    random.shuffle(prav)
     ansver = []
+    msg = []
     k = 0
-    print(de)
     await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_vozv.jpg", 'rb'))
-    msg = await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {otv_8_vozv[k][0]}",
-                                          reply_markup=ReplyKeyboardRemove())
-
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
     return 0
 
 
-async def vozv_8_centre(update, context):
-    global otv_8_vozv, ansver, k, msg
-    ansver.append(update.message.text)
-    k += 1
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg.message_id)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=update.message.message_id)
-    msg = await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {otv_8_vozv[k][0]}",
-                                          reply_markup=ReplyKeyboardRemove())
-    if k == 9:
-        return 1
-    else:
-        return 0
+async def ug_8_start(update, context):
+    global otv_8_vozv, pols
+    prav = otv_8_vozv
+    random.shuffle(prav)
+    ansver = []
+    msg = []
+    k = 0
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_kavkaz.jpg", 'rb'))
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
+    return 0
 
 
-async def vozv_8_last(update, context):
-    global otv_8_vozv, ansver, msg
-    ansver.append(update.message.text)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=msg.message_id)
-    await context.bot.delete_message(chat_id=update.message.chat.id, message_id=update.message.message_id)
-    st = ["НАЗВАНИЕ ВАШ_ОТВЕТ ПРАВИЛЬНЫЙ_ОТВЕТ ДА/НЕТ\n"]
-    c = 0
-    for i in range(len(otv_8_vozv)):
-        if otv_8_vozv[i][1] == ansver[i]:
-            st.append(f"{otv_8_vozv[i][0]}: {ansver[i]} {otv_8_vozv[i][1]} ДА \n")
-            c += 1
-        else:
-            st.append(f"{otv_8_reki[i][0]}: {ansver[i]} {otv_8_reki[i][1]} НЕТ \n")
-    print(st)
-    await update.message.reply_text(" ".join(st), reply_markup=ReplyKeyboardRemove())
-    await update.message.reply_text(
-        f"Количесвто правильных ответов: {c}/{len(ansver)} {math.floor(c / len(ansver) * 100)}%",
-        reply_markup=ReplyKeyboardRemove())
+async def eu_8_start(update, context):
+    global otv_8_vozv, pols
+    prav = otv_8_vozv
+    random.shuffle(prav)
+    ansver = []
+    msg = []
+    k = 0
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_europe.jpg", 'rb'))
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
+    return 0
 
-    return ConversationHandler.END
+
+async def dv_8_start(update, context):
+    global otv_8_vozv, pols
+    prav = otv_8_vozv
+    random.shuffle(prav)
+    ansver = []
+    msg = []
+    k = 0
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_dv.jpg", 'rb'))
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
+    return 0
+
+
+async def ural_8_start(update, context):
+    global otv_8_vozv, pols
+    prav = otv_8_vozv
+    random.shuffle(prav)
+    ansver = []
+    msg = []
+    k = 0
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_ural.jpg", 'rb'))
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
+    return 0
+
+
+async def zsibir_8_start(update, context):
+    global otv_8_vozv, pols
+    prav = otv_8_vozv
+    random.shuffle(prav)
+    ansver = []
+    msg = []
+    k = 0
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_zsib.jpg", 'rb'))
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
+    return 0
+
+
+async def vsibir_8_start(update, context):
+    global otv_8_vozv, pols
+    prav = otv_8_vozv
+    random.shuffle(prav)
+    ansver = []
+    msg = []
+    k = 0
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_vsib.jpg", 'rb'))
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
+    return 0
 
 
 def main():
@@ -484,14 +450,15 @@ def main():
     conv_handler1 = ConversationHandler(
         entry_points=[CommandHandler('8_gori', gori_8_start)],
         states={
-            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, gori_8_centre)],
-            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, gori_8_last)]
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
 
         },
 
         fallbacks=[
-            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_reki', '8_sosedi', '8_ravnini'],
-                           stop_8)]
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler2 = ConversationHandler(
         entry_points=[CommandHandler('menu', start)],
@@ -503,64 +470,146 @@ def main():
     conv_handler3 = ConversationHandler(
         entry_points=[CommandHandler('8_ostrova', ostr_8_start)],
         states={
-            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, ostr_8_centre)],
-            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, ostr_8_last)]
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
 
         },
 
         fallbacks=[
-            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_reki', '8_sosedi', '8_ravnini'],
-                           stop_8)]
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '/8_ug', '/8_eu', "/8_dv", "/8_ural", '/8_vsibir', "/8_zsibir", '/5_ostr', '/5 gori',
+                            '/5_prol', '/5_morya', '/5_reki'], stop_8)]
     )
     conv_handler4 = ConversationHandler(
         entry_points=[CommandHandler('8_morya', prol_8_start)],
         states={
-            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, prol_8_centre)],
-            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, prol_8_last)]
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
 
         },
 
         fallbacks=[
-            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_reki', '8_sosedi', '8_ravnini'],
-                           stop_8)]
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler5 = ConversationHandler(
         entry_points=[CommandHandler('8_reki', reki_8_start)],
         states={
-            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, reki_8_centre)],
-            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, reki_8_last)]
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
 
         },
 
         fallbacks=[
-            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_reki', '8_sosedi', '8_ravnini'],
-                           stop_8)]
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler6 = ConversationHandler(
         entry_points=[CommandHandler('8_sosedi', sosedi_8_start)],
         states={
-            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, sosedi_8_centre)],
-            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, sosedi_8_last)]
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
 
         },
 
         fallbacks=[
-            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_reki', '8_sosedi', '8_ravnini'],
-                           stop_8)]
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
-    conv_handler6 = ConversationHandler(
+    conv_handler7 = ConversationHandler(
         entry_points=[CommandHandler('8_ravnini', vozv_8_start)],
         states={
-            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vozv_8_centre)],
-            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vozv_8_last)]
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
 
         },
 
         fallbacks=[
-            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_reki', '8_sosedi', '8_ravnini'],
-                           stop_8)]
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
+    conv_handler8 = ConversationHandler(
+        entry_points=[CommandHandler('8_ug', ug_8_start)],
+        states={
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
 
+        },
+
+        fallbacks=[
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
+    )
+    conv_handler9 = ConversationHandler(
+        entry_points=[CommandHandler('8_eu', eu_8_start)],
+        states={
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
+
+        },
+
+        fallbacks=[
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
+    )
+    conv_handler10 = ConversationHandler(
+        entry_points=[CommandHandler('8_dv', dv_8_start)],
+        states={
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
+
+        },
+
+        fallbacks=[
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
+    )
+    conv_handler11 = ConversationHandler(
+        entry_points=[CommandHandler('8_ural', ural_8_start)],
+        states={
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
+
+        },
+
+        fallbacks=[
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
+    )
+    conv_handler12 = ConversationHandler(
+        entry_points=[CommandHandler('8_vsibir', vsibir_8_start)],
+        states={
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
+
+        },
+
+        fallbacks=[
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
+    )
+    conv_handler13 = ConversationHandler(
+        entry_points=[CommandHandler('8_zsibir', zsibir_8_start)],
+        states={
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
+
+        },
+
+        fallbacks=[
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
+    )
     application.add_handler(conv_handler1)
     application.add_handler(conv_handler)
     application.add_handler(conv_handler2)
@@ -568,6 +617,13 @@ def main():
     application.add_handler(conv_handler4)
     application.add_handler(conv_handler5)
     application.add_handler(conv_handler6)
+    application.add_handler(conv_handler7)
+    application.add_handler(conv_handler8)
+    application.add_handler(conv_handler9)
+    application.add_handler(conv_handler10)
+    application.add_handler(conv_handler11)
+    application.add_handler(conv_handler12)
+    application.add_handler(conv_handler13)
     application.run_polling()
 
 
