@@ -7,6 +7,7 @@ from telegram.ext import Application, MessageHandler, filters, CommandHandler, C
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 import random
 from glob import glob
+import datetime
 from requests import post
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.DEBUG)
@@ -166,7 +167,7 @@ async def start(update, context):
 async def ans(update, context):
     if update.message.text.lower() == "8 класс":
         reply_keyboard = [['/8_gori', '/8_ostrova', '/8_morya'], ['/8_sosedi', '/8_reki', '/8_ravnini'],
-                          ['/8_ug', '/8_eu', "/8_dv"], ["/8_ural", '/8_vsibir', "/8_zsibir"], ['/menu']]
+                          ['/8_ug', '/8_eu', "/8_dv"], ["/8_ural", '/8_vsibir', "/8_zsibir"], ['/menu', '/pogoda']]
         markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
         await update.message.reply_text("Тесты для 8 класса:\n"
                                         "/8_gori - Горы и хребты России \n"
@@ -180,23 +181,27 @@ async def ans(update, context):
                                         "/8_dv- Дальний Восток \n"
                                         "/8_ural - Урал \n"
                                         "/8_zsbir- Западная Сибирь \n"
-                                        "/8_vsibir - Восточная Сибирь", reply_markup=markup)
+                                        "/8_vsibir - Восточная Сибирь\n"
+                                        "/pogoda - погода в Москве сегодня\n"
+                                        "Все тесты можно остановить коммандой /stop", reply_markup=markup)
         return ConversationHandler.END
     elif update.message.text.lower() == "5 класс":
-        reply_keyboard = [['/5_ostr', '/5 gori', '/5_prol'], ['/5_morya', '/5_reki'], ['/menu']]
+        reply_keyboard = [['/5_ostr', '/5_gori', '/5_prol'], ['/5_morya', '/5_reki'], ['/menu', "/pogoda"]]
         markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
         await update.message.reply_text("Тесты для 5 класса:\n"
                                         "/5_gori - Горы и хребты мира \n"
                                         "/5_ostr - Острова и полуострова мира\n"
                                         "/5_prol - Проливы и заливы мира\n"
                                         "/5_reki - Реки и озёра мира\n"
-                                        "/5_morya - Моря мира \n", reply_markup=markup)
+                                        "/5_morya - Моря мира \n"
+                                        "/pogoda - погода в Москве сегодня\n"
+                                        "Все тесты можно остановить коммандой /stop", reply_markup=markup)
         return ConversationHandler.END
 
 
 async def stop_8(update, context):
     reply_keyboard = [['/8_gori', '/8_ostrova', '/8_morya'], ['/8_sosedi', '/8_reki', '/8_ravnini'],
-                      ['/8_ug', '/8_eu', "/8_dv"], ["/8_ural", '/8_vsibir', "/8_zsibir"], ['/menu']]
+                      ['/8_ug', '/8_eu', "/8_dv"], ["/8_ural", '/8_vsibir', "/8_zsibir"], ['/menu', "/pogoda"]]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     await update.message.reply_text("Тест прерван", reply_markup=markup)
     await update.message.reply_text("Тесты для 8 класса:\n"
@@ -211,12 +216,31 @@ async def stop_8(update, context):
                                     "/8_dv- Дальний Восток \n"
                                     "/8_ural - Урал \n"
                                     "/8_zsbir- Западная Сибирь \n"
-                                    "/8_vsibir - Восточная Сибирь", reply_markup=markup)
+                                    "/8_vsibir - Восточная Сибирь\n"
+                                    "/pogoda - погода в Москве сегодня \n"
+                                    "Все тесты можно остановить коммандой /stop", reply_markup=markup)
+    return ConversationHandler.END
+
+
+async def stop_5(update, context):
+    reply_keyboard = [['/5_ostr', '/5_gori', '/5_prol'], ['/5_morya', '/5_reki'], ['/menu', "/pogoda"]]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
+    await update.message.reply_text("Тест прерван", reply_markup=markup)
+    await update.message.reply_text("Тесты для 5 класса:\n"
+                                    "/5_gori - Горы и хребты мира \n"
+                                    "/5_ostr - Острова и полуострова мира\n"
+                                    "/5_prol - Проливы и заливы мира\n"
+                                    "/5_reki - Реки и озёра мира\n"
+                                    "/5_morya - Моря мира \n"
+                                    "/pogoda - погода в Москве сегодня\n"
+                                    "Все тесты можно остановить коммандой /stop", reply_markup=markup)
     return ConversationHandler.END
 
 
 async def gori_8_start(update, context):
     global otv_8_gori, pols
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     prav = otv_8_gori
     random.shuffle(prav)
     ansver = []
@@ -232,6 +256,8 @@ async def gori_8_start(update, context):
 async def ostr_8_start(update, context):
     global otv_8_ostr, pols
     prav = otv_8_ostr
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     random.shuffle(prav)
     ansver = []
     msg = []
@@ -245,6 +271,8 @@ async def ostr_8_start(update, context):
 
 async def prol_8_start(update, context):
     global otv_8_morya, pols
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     prav = otv_8_morya
     random.shuffle(prav)
     ansver = []
@@ -260,6 +288,8 @@ async def prol_8_start(update, context):
 async def reki_8_start(update, context):
     global otv_8_reki, pols
     prav = otv_8_reki
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     random.shuffle(prav)
     ansver = []
     msg = []
@@ -274,6 +304,8 @@ async def reki_8_start(update, context):
 async def sosedi_8_start(update, context):
     global otv_8_sosedi, pols
     prav = otv_8_sosedi
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     random.shuffle(prav)
     ansver = []
     msg = []
@@ -289,6 +321,8 @@ async def vse8_centre(update, context):
     global pols
     al = pols[f'{update.message.chat.id}']
     prav = al[0]
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     ansver = al[3]
     msg = al[2]
     k = al[1]
@@ -311,6 +345,8 @@ async def vse8_last(update, context):
     global pols
     al = pols[f'{update.message.chat.id}']
     prav = al[0]
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     ansver = al[3]
     msg = al[2]
     k = al[1]
@@ -340,6 +376,8 @@ async def vozv_8_start(update, context):
     global otv_8_vozv, pols
     prav = otv_8_vozv
     random.shuffle(prav)
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     ansver = []
     msg = []
     k = 0
@@ -351,8 +389,10 @@ async def vozv_8_start(update, context):
 
 
 async def ug_8_start(update, context):
-    global otv_8_vozv, pols
-    prav = otv_8_vozv
+    global otv_8_ug, pols
+    prav = otv_8_ug
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     random.shuffle(prav)
     ansver = []
     msg = []
@@ -365,8 +405,10 @@ async def ug_8_start(update, context):
 
 
 async def eu_8_start(update, context):
-    global otv_8_vozv, pols
-    prav = otv_8_vozv
+    global otv_8_europe, pols
+    prav = otv_8_europe
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     random.shuffle(prav)
     ansver = []
     msg = []
@@ -379,10 +421,12 @@ async def eu_8_start(update, context):
 
 
 async def dv_8_start(update, context):
-    global otv_8_vozv, pols
-    prav = otv_8_vozv
+    global otv_8_dv, pols
+    prav = otv_8_dv
     random.shuffle(prav)
     ansver = []
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     msg = []
     k = 0
     await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_dv.jpg", 'rb'))
@@ -393,9 +437,11 @@ async def dv_8_start(update, context):
 
 
 async def ural_8_start(update, context):
-    global otv_8_vozv, pols
-    prav = otv_8_vozv
+    global otv_8_ural, pols
+    prav = otv_8_ural
     random.shuffle(prav)
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     ansver = []
     msg = []
     k = 0
@@ -407,10 +453,12 @@ async def ural_8_start(update, context):
 
 
 async def zsibir_8_start(update, context):
-    global otv_8_vozv, pols
-    prav = otv_8_vozv
+    global otv_8_zapsibir, pols
+    prav = otv_8_zapsibir
     random.shuffle(prav)
     ansver = []
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     msg = []
     k = 0
     await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("8_zsib.jpg", 'rb'))
@@ -421,9 +469,11 @@ async def zsibir_8_start(update, context):
 
 
 async def vsibir_8_start(update, context):
-    global otv_8_vozv, pols
-    prav = otv_8_vozv
+    global otv_8_vossibir, pols
+    prav = otv_8_vossibir
     random.shuffle(prav)
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     ansver = []
     msg = []
     k = 0
@@ -432,6 +482,161 @@ async def vsibir_8_start(update, context):
                                                reply_markup=ReplyKeyboardRemove()))
     pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
     return 0
+
+
+async def ostr_5_start(update, context):
+    global otv_5_ostr, pols
+    prav = otv_5_ostr
+    random.shuffle(prav)
+    ansver = []
+    msg = []
+    k = 0
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("5_ostr.jpg", 'rb'))
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
+    return 0
+
+
+async def gori_5_start(update, context):
+    global otv_5_gori, pols
+    prav = otv_5_gori
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
+    random.shuffle(prav)
+    ansver = []
+    msg = []
+    k = 0
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("5_gori.jpg", 'rb'))
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
+    return 0
+
+
+async def prol_5_start(update, context):
+    global otv_5_prol, pols
+    prav = otv_5_prol
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
+    random.shuffle(prav)
+    ansver = []
+    msg = []
+    k = 0
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("5_prol.jpg", 'rb'))
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
+    return 0
+
+
+async def reki_5_start(update, context):
+    global otv_5_reki, pols
+    prav = otv_5_reki
+    random.shuffle(prav)
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
+    ansver = []
+    msg = []
+    k = 0
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("5_reki.jpg", 'rb'))
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
+    return 0
+
+
+async def morya_5_start(update, context):
+    global otv_5_morya, pols
+    prav = otv_5_morya
+    random.shuffle(prav)
+    ansver = []
+    msg = []
+    k = 0
+    reply_keyboard = [['/stop']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
+    await context.bot.send_photo(chat_id=update.message.chat.id, photo=open("5_morya.jpg", 'rb'))
+    msg.append(await update.message.reply_text(f"Напишите цифру под которой обозначен данный объект: {prav[k][0]}",
+                                               reply_markup=ReplyKeyboardRemove()))
+    pols[f'{update.message.chat.id}'] = [prav, k, msg, ansver]
+    return 0
+
+
+async def weather(update, context):
+    def yandex_weather(data):
+        location = " ".join(data).split()
+        if '--extra' in location:
+            location.remove('--extra')
+        if '-reply' in location:
+            location.remove('-reply')
+        if '-temp' in location:
+            location.remove('-temp')
+        if '-feels_like' in location:
+            location.remove('-feels_like')
+        if '-condition' in location:
+            location.remove('-condition')
+        if '-wind_dir' in location:
+            location.remove('-wind_dir')
+        if '-wind_speed' in location:
+            location.remove('-wind_speed')
+        coords = [37.617531, 55.756086]
+        conditions = {'clear': 'ясно ☀', 'partly-cloudy': 'малооблачно 🌤', 'cloudy': 'облачно с прояснениями ⛅',
+                      'overcast': 'пасмурно ☁', 'drizzle': 'морось 🌧', 'light-rain': 'небольшой дождь 🌧',
+                      'rain': 'дождь 🌧', 'moderate-rain': 'умеренно сильный 🌧', 'heavy-rain': 'сильный дождь 🌧',
+                      'continuous-heavy-rain': 'длительный сильный дождь 🌧', 'showers': 'ливень 🌧',
+                      'wet-snow': 'дождь со снегом 🌨', 'light-snow': 'небольшой снег 🌨', 'snow': 'снег 🌨',
+                      'snow-showers': 'снегопад 🌨', 'hail': 'град 🌨', 'thunderstorm': 'гроза 🌩',
+                      'thunderstorm-with-rain': 'дождь с грозой ⛈', 'thunderstorm-with-hail': 'гроза с градом ⛈'
+                      }
+        wind_dir = {'nw': 'северо-западное', 'n': 'северное', 'ne': 'северо-восточное', 'e': 'восточное',
+                    'se': 'юго-восточное', 's': 'южное', 'sw': 'юго-западное', 'w': 'западное', 'с': 'штиль'}
+        params = {"lat": coords[1],
+                  "lon": coords[0],
+                  "lang": "ru_RU",
+                  "extra": "true"}
+        headers = {"X-Yandex-API-Key": "7299f5a9-eec4-4c1f-ac26-9981c932d362"}
+        res = requests.get('https://api.weather.yandex.ru/v2/forecast', params=params, headers=headers).json()
+
+        weather = ''
+        if '-reply' not in data:
+            weather += f"Вы выполнили запрос погоды по адресу: Москва"
+        if '-temp' not in data:
+            weather += f"\nТемпература: {res['fact']['temp']}°C"
+        if '-feels_like' not in data:
+            weather += f"\nОщущается, как: {res['fact']['feels_like']}°C"
+        if '-condition' not in data:
+            weather += f"\nОсадки: {conditions[res['fact']['condition']]}"
+        if '-wind_dir' not in data:
+            weather += f"\nНаправление ветра: {wind_dir[res['fact']['wind_dir']]}"
+        if '-wind_speed' not in data:
+            weather += f"\nСкорость ветра: {res['fact']['wind_speed']} м/с"
+        if "--extra" in data:
+            weather += f"\nСкорость порывов ветра: {res['fact']['wind_gust']} м/с\nДавление : {res['fact']['pressure_mm']}  мм рт. ст.\nВлажность воздуха: {res['fact']['humidity']} %"
+        weather = weather.lstrip("\n")
+        forecast = ''
+        if '-reply' not in data:
+            forecast += f"Вы выполнили запрос погоды по адресу: Москва"
+        if '-reply_date' not in data:
+            forecast += f"\nВы выполнили запрос погоды на сегодня"
+        if '-temp' not in data:
+                forecast += f"\nТемпература: {res['forecasts'][0]['parts']['day_short']['temp']}°C"
+        if '-feels_like' not in data:
+                    forecast += f"\nОщущается, как: {res['forecasts'][0]['parts']['day_short']['feels_like']}°C"
+        if '-condition' not in data:
+                    forecast += f"\nОсадки: {conditions[res['forecasts'][0]['parts']['day_short']['condition']]}"
+        if '-wind_dir' not in data:
+                    forecast += f"\nНаправление ветра: {wind_dir[res['forecasts'][0]['parts']['day_short']['wind_dir']]}"
+        if '-wind_speed' not in data:
+                    forecast += f"\nСкорость ветра: {res['forecasts'][0]['parts']['day_short']['wind_speed']} м/с"
+        if "--extra" in data:
+                    forecast += f"\nСкорость порывов ветра: {res['forecasts'][0]['parts']['day_short']['wind_gust']} м/с\nДавление : {res['forecasts'][0]['parts']['day_short']['pressure_mm']}  мм рт. ст.\nВлажность воздуха: {res['forecasts'][0]['parts']['day_short']['humidity']} %"
+        forecast = forecast.lstrip("\n")
+        return forecast
+    reply_keyboard = [['/menu']]
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
+    await update.message.reply_text(yandex_weather(context.args),reply_markup=markup)
 
 
 def main():
@@ -457,7 +662,7 @@ def main():
 
         fallbacks=[
             CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
-                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
                             '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler2 = ConversationHandler(
@@ -477,8 +682,8 @@ def main():
 
         fallbacks=[
             CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
-                            '/8_ug', '/8_eu', "/8_dv", "/8_ural", '/8_vsibir', "/8_zsibir", '/5_ostr', '/5 gori',
-                            '/5_prol', '/5_morya', '/5_reki'], stop_8)]
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler4 = ConversationHandler(
         entry_points=[CommandHandler('8_morya', prol_8_start)],
@@ -490,7 +695,7 @@ def main():
 
         fallbacks=[
             CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
-                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
                             '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler5 = ConversationHandler(
@@ -503,7 +708,7 @@ def main():
 
         fallbacks=[
             CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
-                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
                             '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler6 = ConversationHandler(
@@ -516,7 +721,7 @@ def main():
 
         fallbacks=[
             CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
-                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
                             '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler7 = ConversationHandler(
@@ -529,7 +734,7 @@ def main():
 
         fallbacks=[
             CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
-                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
                             '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler8 = ConversationHandler(
@@ -542,7 +747,7 @@ def main():
 
         fallbacks=[
             CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
-                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
                             '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler9 = ConversationHandler(
@@ -555,7 +760,7 @@ def main():
 
         fallbacks=[
             CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
-                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
                             '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler10 = ConversationHandler(
@@ -568,7 +773,7 @@ def main():
 
         fallbacks=[
             CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
-                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
                             '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler11 = ConversationHandler(
@@ -581,7 +786,7 @@ def main():
 
         fallbacks=[
             CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
-                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
                             '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler12 = ConversationHandler(
@@ -594,7 +799,7 @@ def main():
 
         fallbacks=[
             CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
-                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
                             '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     conv_handler13 = ConversationHandler(
@@ -607,7 +812,72 @@ def main():
 
         fallbacks=[
             CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
-                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5 gori',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
+    )
+    conv_handler14 = ConversationHandler(
+        entry_points=[CommandHandler('5_ostr', ostr_5_start)],
+        states={
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
+
+        },
+
+        fallbacks=[
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
+    )
+    conv_handler15 = ConversationHandler(
+        entry_points=[CommandHandler('5_gori', gori_5_start)],
+        states={
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
+
+        },
+
+        fallbacks=[
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
+    )
+    conv_handler16 = ConversationHandler(
+        entry_points=[CommandHandler('5_prol', prol_5_start)],
+        states={
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
+
+        },
+
+        fallbacks=[
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
+    )
+    conv_handler17 = ConversationHandler(
+        entry_points=[CommandHandler('5_morya', morya_5_start)],
+        states={
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
+
+        },
+
+        fallbacks=[
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
+                            '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
+    )
+    conv_handler18 = ConversationHandler(
+        entry_points=[CommandHandler('5_reki', reki_5_start)],
+        states={
+            0: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_centre)],
+            1: [MessageHandler(filters.TEXT & ~filters.COMMAND, vse8_last)]
+
+        },
+
+        fallbacks=[
+            CommandHandler(['stop', 'menu', '8_gori', '8_ostrova', '8_morya', '8_sosedi', '8_reki', '8_ravnini',
+                            '8_ug', '8_eu', "8_dv", "8_ural", '8_vsibir', "8_zsibir", '5_ostr', '5_gori',
                             '5_prol', '5_morya', '5_reki', "pogoda"], stop_8)]
     )
     application.add_handler(conv_handler1)
@@ -624,6 +894,12 @@ def main():
     application.add_handler(conv_handler11)
     application.add_handler(conv_handler12)
     application.add_handler(conv_handler13)
+    application.add_handler(conv_handler14)
+    application.add_handler(conv_handler15)
+    application.add_handler(conv_handler16)
+    application.add_handler(conv_handler17)
+    application.add_handler(conv_handler18)
+    application.add_handler(CommandHandler('pogoda', weather))
     application.run_polling()
 
 
